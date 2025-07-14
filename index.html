@@ -7,36 +7,47 @@
     <title>Cookie Clicker - Tailwind Edition</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <style>
-        /* Apply the Outfit font to the whole page */
         body {
             font-family: 'Outfit', sans-serif;
         }
     </style>
 </head>
 
-<body class="bg-grey-100 dark:bg-grey-900 text-gray-800 ">
+<body class="bg-grey-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
     <!-- Main Container for the entire game interface -->
     <div class="container mx-auto p-4 max-w-6xl">
+        <div
+            class="w-full bg-white p-4 mb-4 rounded-xl shadow-lg border border-gray-200 flex flex-col gap-4 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+            <h1 class="text-3xl font-bold text-center">Cookie Clicker</h1>
+            <p class="text-center text-gray-500">Dev Build Ver1.2</p>
+        </div>
         <div class="flex flex-col md:flex-row gap-4">
-
             <!-- Left Column: Main Game Area (takes up 3/4 of the space on medium screens and up) -->
-            <div class="w-full md:w-3/4 bg-white p-4 rounded-xl shadow-lg border border-gray-200 flex flex-col gap-4">
-                
+            <div
+                class="w-full md:w-3/4 bg-white p-4 rounded-xl shadow-lg border border-gray-200 flex flex-col gap-4 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+
                 <!-- Top Bar: Displays currency -->
-                <div class="topBar bg-gray-50 border border-gray-200 rounded-lg p-3 flex justify-between items-center">
+                <div
+                    class="topBar bg-gray-50 border border-gray-200 rounded-lg p-3 flex justify-between items-center dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
                     <div>
                         <p class="text-sm text-gray-500">Cookies</p>
                         <p class="wallet text-2xl font-bold">0</p>
                     </div>
                     <div>
-                        <button id="darkModebtn" class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors">
+                        <button id="darkModebtn"
+                            class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors shadow-lg shadow-black-500/30 dark:shadow-white-500/50 dark:bg-gray-800 duration-300">
                             Dark Mode 🌑
                         </button>
                     </div>
@@ -44,14 +55,16 @@
 
                 <!-- Cookie Area: The main clickable cookie -->
                 <div class="flex-grow flex items-center justify-center py-8">
-                    <button class="mainCookie text-8xl transform transition-transform duration-100 active:scale-95 focus:outline-none">
+                    <button
+                        class="mainCookie text-8xl transform transition-transform duration-100 active:scale-95 focus:outline-none">
                         🍪
                     </button>
                 </div>
 
                 <!-- Income Box: Displays cookies per second -->
-                <div class="incomeBox bg-linear-to-r from-indigo-600 to-pink-400 border border-blue-200 rounded-lg p-4 text-center">
-                    <p class="text-blue-800 text-xl font-semibold">CPS: <span id="cps">0.0</span></p>
+                <div
+                    class="incomeBox bg-linear-to-r from-indigo-600 to-pink-400 border border-blue-200 rounded-lg p-4 text-center">
+                    <p class="text-blue-800 text-xl font-semibold dark:text-white">CPS: <span id="cps">0.0</span></p>
                     <p class="text-grey-500 text-sm font-semibold">Total Income: <span id="totalIncome">0.0</span></p>
 
 
@@ -60,13 +73,15 @@
             </div>
 
             <!-- Right Column: Addons/Upgrades Store (takes up 1/4 of the space on medium screens and up) -->
-            <div class="w-full md:w-1/4 bg-white p-4 rounded-xl shadow-lg border border-gray-200">
+            <div
+                class="w-full md:w-1/4 bg-white p-4 rounded-xl shadow-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300 flex flex-col gap-4">
                 <h2 class="text-xl font-bold mb-4 text-center">Upgrades</h2>
                 <!-- Container for the list of addons -->
                 <div class="addons flex flex-col space-y-2">
-                    
+
                     <!-- Upgrades -->
-                    <button id="upgradebtn" class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors">
+                    <button id="upgradebtn"
+                        class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg shadow-lg shadow-red-500/30 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="upgradeTitle font-bold">click buff</p>
@@ -75,13 +90,14 @@
                             <p class="upgradeTier text-2xl font-bold">0</p>
                         </div>
                     </button>
-                    
+
 
                     <h2 class="text-xl font-bold mb-4 text-center">Bakers</h2>
 
 
                     <!-- Baker 1 -->
-                    <button id="baker1btn" class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors">
+                    <button id="baker1btn"
+                        class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg shadow-lg shadow-blue-500/30 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="font-bold">allan</p>
@@ -92,7 +108,8 @@
                     </button>
 
                     <!-- Baker 2 -->
-                    <button id="baker2btn" class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors">
+                    <button id="baker2btn"
+                        class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg shadow-lg shadow-orange-500/30 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="font-bold">john</p>
@@ -103,7 +120,8 @@
                     </button>
 
                     <!-- Baker 3 -->
-                    <button id="baker3btn" class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors">
+                    <button id="baker3btn"
+                        class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg shadow-lg shadow-emerald-500/30 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300 ">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="font-bold">alex</p>
@@ -112,12 +130,12 @@
                             <p id="baker1Count" class=" text-2xl font-bold">0</p>
                         </div>
                     </button>
-
                 </div>
             </div>
         </div>
     </div>
-<script src="./script.js"></script>
+    <script src="./script.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
