@@ -1,3 +1,5 @@
+// Variables :
+
 // interducing variables to access HTML elements
 //spendable money
 const walletpath = document.querySelector(".wallet");
@@ -44,6 +46,13 @@ let clickMultiplier = 1;
 let wallet = 0;
 let totalincome = 0;
 
+//HTML tag for Manual control of Darkmode
+const uiToggle = document.querySelector("html");
+//Light Switch Buttons Path
+const darkModebtn = document.querySelector("#darkModebtn");
+
+// Functions :
+
 function income(incomeValue) {
     
     wallet = wallet + incomeValue;
@@ -85,6 +94,19 @@ function bakerBuy(bakernum, bakernumpath){
 function test(bakernum){
     console.log(bakernum.cost);
 }
+function uiToggleSwitch() {
+    if (uiToggle.classList.contains("dark")) {
+        uiToggle.classList.remove("dark");
+        darkModebtn.textContent = "Dark Mode 🌑";
+    } else {
+        uiToggle.classList.add("dark");
+        darkModebtn.textContent = "Light Mode ☀️";
+    }
+}
+
+
+//Events :
+darkModebtn.addEventListener("click", uiToggleSwitch);
 cookiepath.addEventListener("click", cookieClicked);
 upgradeButtonpath.button.addEventListener("click", upgrade);
 baker1path.button.addEventListener("click", () => bakerBuy(baker1, baker1path));
