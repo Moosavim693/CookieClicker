@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <style>
         /* Apply the Outfit font to the whole page */
         body {
@@ -19,7 +20,7 @@
     </style>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-grey-100 dark:bg-grey-900 text-gray-800 ">
 
     <!-- Main Container for the entire game interface -->
     <div class="container mx-auto p-4 max-w-6xl">
@@ -34,6 +35,11 @@
                         <p class="text-sm text-gray-500">Cookies</p>
                         <p class="wallet text-2xl font-bold">0</p>
                     </div>
+                    <div>
+                        <button id="darkModebtn" class="w-full text-left p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors">
+                            Dark Mode 🌑
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Cookie Area: The main clickable cookie -->
@@ -44,7 +50,7 @@
                 </div>
 
                 <!-- Income Box: Displays cookies per second -->
-                <div class="incomeBox bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+                <div class="incomeBox bg-linear-to-r from-indigo-600 to-pink-400 border border-blue-200 rounded-lg p-4 text-center">
                     <p class="text-blue-800 text-xl font-semibold">CPS: <span id="cps">0.0</span></p>
                     <p class="text-grey-500 text-sm font-semibold">Total Income: <span id="totalIncome">0.0</span></p>
 

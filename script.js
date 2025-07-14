@@ -33,7 +33,6 @@ function income(incomeValue) {
 
 function cookieClicked() {
     income(1 * clickMultiplier);
-    console.log(totalincome);
 }
 
 function upgrade(){
