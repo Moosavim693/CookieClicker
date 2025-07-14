@@ -11,9 +11,27 @@ const totalincomepath = document.querySelector("#totalIncome");
 const CPSpath = document.querySelector("#cps");
 //upgrade button
 const upgradeButtonpath = {
-     itself : document.querySelector("#upgradebtn"),
+     button : document.querySelector("#upgradebtn"),
      cost : document.querySelector(".upgradeCost"),
      tier : document.querySelector(".upgradeTier"),
+}
+//baker1 allan
+const baker1 = {
+    button:document.querySelector("#baker1btn"),
+    cost  :document.querySelector("#baker1cost"),
+    count :document.querySelector("#baker1count"),
+}
+//baker2 allan
+const baker2 = {
+    button:document.querySelector("#baker2btn"),
+    cost  :document.querySelector("#baker2cost"),
+    count :document.querySelector("#baker2count"),
+}
+//baker3 allan
+const baker3 = {
+    button:document.querySelector("#baker3btn"),
+    cost  :document.querySelector("#baker3cost"),
+    count :document.querySelector("#baker3count"),
 }
 let upgradeButton = { cost : 100, modifier : 2,};
 
@@ -48,7 +66,7 @@ function upgrade(){
 }
 
 cookiepath.addEventListener("click", cookieClicked);
-upgradeButtonpath.itself.addEventListener("click", upgrade);
+upgradeButtonpath.button.addEventListener("click", upgrade);
 
 
 
