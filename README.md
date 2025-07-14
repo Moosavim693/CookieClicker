@@ -4,6 +4,13 @@
 A classic idle game rebuilt from the ground up with a clean, modern interface using Tailwind CSS. Click the cookie, earn cookies, buy upgrades, and watch your cookie empire grow! This project is built with plain HTML, CSS (via Tailwind), and vanilla JavaScript, making it lightweight, fast, and easy to understand.
 
 
+## Deployment
+
+To play the game simply check this page out:
+
+▶️[Start The Game](https://moosavim693.github.io/CookieClicker/)
+
+
 ## ✨ Features
 
 - Light/dark mode toggle
