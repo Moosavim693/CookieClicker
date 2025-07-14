@@ -111,6 +111,7 @@ cookiepath.addEventListener("click", cookieClicked);
 upgradeButtonpath.button.addEventListener("click", upgrade);
 baker1path.button.addEventListener("click", () => bakerBuy(baker1, baker1path));
 baker2path.button.addEventListener("click", () => bakerBuy(baker2, baker2path));
+baker3path.button.addEventListener("click", () => bakerBuy(baker3, baker3path));
 
 setInterval(() => {
     wallet = wallet + CPS;
